@@ -1,0 +1,30 @@
+﻿.project-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+    .project-list li {
+        margin: 1.2rem 0;
+        background: #3a3a5d;
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .project-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(125, 95, 255, 0.4);
+        }
+.contact-link {
+    color: #ffee88; /* màu vàng sáng */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+    .contact-link:hover {
+        color: #88ffe0; /* màu xanh mint neon khi hover */
+        text-shadow: 0 0 8px #88ffe0;
+    }
