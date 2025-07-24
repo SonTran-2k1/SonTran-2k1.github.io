@@ -6,7 +6,7 @@ body {
   line-height: 1.6;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
   text-align: center;
   padding: 2rem 1rem;
@@ -70,7 +70,7 @@ h1 {
   width: 100%;
 }
 
-/* SECTION */
+/* ===== SECTIONS ===== */
 .section {
   max-width: 1000px;
   margin: 2rem auto;
@@ -87,6 +87,13 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.sub-title {
+  margin-top: 2rem;
+  color: #cfcfff;
+  font-size: 1.4rem;
+}
+
+/* ===== SKILLS ===== */
 .skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -100,10 +107,9 @@ h1 {
   text-align: center;
 }
 
-/* PROJECT LIST */
+/* ===== PROJECTS - COMMON STYLES ===== */
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
 }
@@ -113,62 +119,66 @@ h1 {
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  text-align: center;
   transition: transform 0.3s ease, background 0.3s ease;
   overflow: hidden;
 }
 
+/* Unified hover effect for all project cards */
 .project-card:hover {
   transform: translateY(-5px);
-  background: #4e4e7a;
+  background: #4a4a6d;
+}
+
+.project-card h3,
+.project-card h4 {
+  color: #ffa500;
+  margin-bottom: 0.5rem;
 }
 
 .project-img {
   width: 100%;
-  height: 150px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
 
-.project-card h4,
-.project-card h3 {
-  color: #7d5fff;
-  margin-bottom: 0.5rem;
-}
-
-/* PROJECT LARGE - HORIZONTAL */
+/* ===== LARGE PROJECTS - HORIZONTAL LAYOUT ===== */
 .project-list.large-projects {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
 .large-projects .project-card {
   display: flex;
   align-items: center;
   text-align: left;
-  background: #3a3a5d;
 }
 
-.large-projects .project-card img.project-img {
+.large-projects .project-img {
   width: 220px;
   height: 140px;
-  border-radius: 10px;
   margin-right: 1.5rem;
+  margin-bottom: 0;
 }
 
-.large-projects .project-card .project-content {
+.large-projects .project-content {
   flex: 1;
 }
 
-/* CONTACT */
-.sub-title {
-  margin-top: 2rem;
-  color: #cfcfff;
-  font-size: 1.4rem;
+/* ===== SMALL PROJECTS - GRID LAYOUT ===== */
+.project-list.small-projects {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+.small-projects .project-card {
+  text-align: center;
+}
+
+.small-projects .project-img {
+  height: 150px;
+}
+
+/* ===== CONTACT ===== */
 #lienhe p {
   color: #ccc;
   font-size: 1.1rem;
@@ -181,6 +191,7 @@ h1 {
   transition: all 0.3s ease;
 }
 
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 1rem;
@@ -188,6 +199,7 @@ footer {
   margin-top: 2rem;
 }
 
+/* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
