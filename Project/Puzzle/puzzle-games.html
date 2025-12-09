@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzle Games | Dự án nhỏ</title>
+    <link rel="stylesheet" href="../../Styles/style.css" />
+    <link rel="stylesheet" href="../../Styles/effects.css" />
+    <link rel="icon" type="image/png" href="../../images/avatar.png" />
+  </head>
+  <body>
+    <header>
+      <h1>Puzzle Games</h1>
+      <div class="role">Dự án nhỏ | Casual & Hyper-Casual</div>
+      <nav class="menu">
+        <a href="../../index.html">Trang chủ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <h2>Giới thiệu</h2>
+        <p>
+          Các dự án game Puzzle và Hyper-Casual được phát triển nhanh gọn, tập
+          trung vào trải nghiệm đơn giản và cuốn hút cho người chơi mobile.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Ảnh minh họa</h2>
+        <div class="project-list">
+          <div class="project-card">
+            <img
+              src="../../images/puzzle/avatar.jpg"
+              alt="Puzzle Games"
+              class="project-img"
+            />
+            <p>Ảnh đại diện Puzzle Games.</p>
+          </div>
+          <div class="project-card">
+            <img
+              src="../../images/puzzle/demo1.jpg"
+              alt="Puzzle Demo 1"
+              class="project-img"
+            />
+            <p>Màn chơi demo.</p>
+          </div>
+          <div class="project-card">
+            <img
+              src="../../images/puzzle/demo2.png"
+              alt="Puzzle Demo 2"
+              class="project-img"
+            />
+            <p>Màn chơi demo 2.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>© <span id="year"></span> Trần Ngọc Sơn • Quivering Studio.</footer>
+
+    <script src="../../js/reveal.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
