@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tower Defense: Central Zone | Dự án</title>
+    <link rel="stylesheet" href="../../Styles/style.css" />
+    <link rel="stylesheet" href="../../Styles/effects.css" />
+    <link rel="icon" type="image/png" href="../../images/avatar.png" />
+  </head>
+  <body>
+    <header>
+      <h1>Tower Defense: Central Zone</h1>
+      <div class="role">Dự án lớn | Quivering Studio</div>
+      <nav class="menu">
+        <a href="../../index.html">Trang chủ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <h2>Giới thiệu</h2>
+        <p>
+          "Tower Defense: Central Zone" là dự án chiến thuật Tower Defense quy
+          mô lớn, được thiết kế từ concept ban đầu, xây dựng gameplay, UI/UX,
+          đến tối ưu hóa cho mobile.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Hình ảnh dự án</h2>
+        <div class="project-list">
+          <div class="project-card">
+            <img
+              src="../../images/tower-defense/avatar.jpg"
+              alt="Tower Defense"
+              class="project-img"
+            />
+            <p>Ảnh đại diện dự án.</p>
+          </div>
+          <div class="project-card">
+            <img
+              src="../../images/tower-defense/demo1.jpg"
+              alt="Demo 1"
+              class="project-img"
+            />
+            <p>Màn chơi demo 1.</p>
+          </div>
+          <div class="project-card">
+            <img
+              src="../../images/tower-defense/demo2.jpg"
+              alt="Demo 2"
+              class="project-img"
+            />
+            <p>Màn chơi demo 2.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Video Demo</h2>
+        <video controls width="100%" style="border-radius: 12px">
+          <source
+            src="../../images/tower-defense/demo-video.mp4"
+            type="video/mp4"
+          />
+          Trình duyệt của bạn không hỗ trợ video.
+        </video>
+      </section>
+    </main>
+
+    <footer>© <span id="year"></span> Trần Ngọc Sơn • Quivering Studio.</footer>
+
+    <script src="../../js/reveal.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
