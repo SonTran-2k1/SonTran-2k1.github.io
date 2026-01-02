@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #252547);
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #7d5fff;
+  object-fit: cover;
+  box-shadow: 0 0 20px #7d5fff;
+  transition: transform 0.3s ease;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 1rem 0 0;
+}
+
+.role {
+  font-size: 1.2rem;
+  color: #cfcfff;
+  margin-bottom: 1rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: #7d5fff;
+  width: 0;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #2d2d4a;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1s ease;
+}
+
+.section h2 {
+  text-align: center;
+  color: #7d5fff;
+  margin-bottom: 1rem;
+}
+
+.sub-title {
+  margin-top: 2rem;
+  color: #cfcfff;
+  font-size: 1.4rem;
+}
+
+/* ===== SKILLS ===== */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.skill {
+  background: #3a3a5d;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ===== PROJECTS - COMMON STYLES ===== */
+.project-list {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: #3a3a5d;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+  overflow: hidden;
+}
+
+/* Unified hover effect for all project cards */
+.project-card:hover {
+  transform: translateY(-5px);
+  background: #4a4a6d;
+}
+
+.project-card h3,
+.project-card h4 {
+  color: #ffa500;
+  margin-bottom: 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background: #ffa500;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* ===== LARGE PROJECTS - HORIZONTAL LAYOUT ===== */
+.project-list.large-projects {
+  display: flex;
+  flex-direction: column;
+}
+
+.large-projects .project-card {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.large-projects .project-img {
+  width: 220px;
+  height: 140px;
+  margin-right: 1.5rem;
+  margin-bottom: 0;
+}
+
+.large-projects .project-content {
+  flex: 1;
+}
+
+/* ===== SMALL PROJECTS - GRID LAYOUT ===== */
+.project-list.small-projects {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.small-projects .project-card {
+  text-align: center;
+}
+
+.small-projects .project-img {
+  height: 150px;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.gallery .landscape {
+  grid-column: span 2;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #ccc;
+  margin-top: 2rem;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
