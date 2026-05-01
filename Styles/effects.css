@@ -1,0 +1,105 @@
+/* =====================================================
+   EFFECTS.CSS — TNS.DEV | Reveal & Extra Animations
+   ===================================================== */
+
+/* ===== GALLERY (kept for project detail pages) ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.gallery img {
+  width: 100%; height: auto;
+  object-fit: contain; border-radius: 8px;
+  border: 1px solid rgba(125,95,255,0.15);
+}
+.gallery .landscape { grid-column: span 2; }
+
+/* ===== BADGE (kept for project detail pages) ===== */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem; border-radius: 6px;
+  font-size: 0.75rem; font-weight: 700;
+  background: rgba(255,140,66,0.85); color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== REVEAL ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger reveal for grid children */
+.projects-masonry .project-card.reveal,
+.archive-grid .archive-card,
+.featured-grid .featured-card.reveal {
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+/* ===== HOVER GLOW on links ===== */
+#contact .contact-card:hover .contact-val {
+  color: #a888ff;
+}
+
+/* ===== Scanline overlay (subtle retro effect) ===== */
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03) 0px,
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* ===== Neon border pulse on active project cards ===== */
+.featured-card:hover {
+  animation: neon-border 1.5s ease-in-out infinite alternate;
+}
+@keyframes neon-border {
+  from { box-shadow: 0 0 10px rgba(125,95,255,0.2), 0 0 20px rgba(125,95,255,0.1); }
+  to   { box-shadow: 0 0 20px rgba(125,95,255,0.4), 0 0 40px rgba(125,95,255,0.2); }
+}
+
+/* ===== Btn ripple on active btn ===== */
+.btn-primary, .btn-secondary, .btn-card, .active-btn {
+  position: relative; overflow: hidden;
+}
+.btn-primary::after, .active-btn::after {
+  content: '';
+  position: absolute; top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+.btn-primary:active::after, .active-btn:active::after {
+  width: 200px; height: 200px; opacity: 1;
+}
+
+/* ===== Image zoom on project cards ===== */
+.card-img-wrap img,
+.featured-img-wrap img,
+.archive-img-wrap img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Year badge glow ===== */
+.year-badge {
+  transition: box-shadow 0.3s;
+}
+.year-group:hover .year-badge {
+  box-shadow: 0 0 20px rgba(125,95,255,0.35);
+}

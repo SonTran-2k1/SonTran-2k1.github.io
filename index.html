@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trần Ngọc Sơn | Unity Game Developer</title>
+  <link rel="icon" type="image/png" href="images/avatar.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="Styles/style.css" />
+  <link rel="stylesheet" href="Styles/effects.css" />
+  <script src="js/smooth-scroll.js" defer></script>
+</head>
+
+<body>
+  <!-- Animated background grid -->
+  <div class="bg-grid"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <img src="images/avatar.png" alt="TNS" class="nav-avatar" />
+      <span class="nav-logo">TNS<span class="accent">.</span>DEV</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#archive" class="nav-link">Archive</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn-login" id="loginBtn" onclick="openLoginModal()">
+        <i class="fas fa-user-shield"></i>
+        <span>Admin</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" onclick="toggleNav()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot-live"></span>
+        Available for Projects
+      </div>
+      <div class="avatar-wrapper">
+        <div class="avatar-ring ring1"></div>
+        <div class="avatar-ring ring2"></div>
+        <img src="images/avatar.png" alt="Trần Ngọc Sơn" class="avatar" />
+        <div class="avatar-status" title="Online"></div>
+      </div>
+      <h1 class="glitch" data-text="Trần Ngọc Sơn">Trần Ngọc Sơn</h1>
+      <div class="typed-wrapper">
+        <span class="typed-text" id="typedText"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-sub">
+        Founder &amp; Lead Developer @
+        <span class="accent-glow">Quivering Studio</span>
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">
+          <i class="fas fa-gamepad"></i> View Projects
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <i class="fas fa-paper-plane"></i> Contact Me
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Games Built</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Exp</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="1">0</span>
+          <span class="stat-label">Active Studio</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section reveal" id="about">
+      <div class="section-header">
+        <span class="section-tag">01 // About</span>
+        <h2>Giới thiệu</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Xin chào! Mình là <strong>Trần Ngọc Sơn</strong> (sinh 19/05/2001),
+            Unity Developer với đam mê xây dựng những trải nghiệm gaming độc đáo và đáng nhớ.
+          </p>
+          <p>
+            Hiện đang điều hành <strong class="accent-glow">Quivering Studio</strong>
+            với mục tiêu xuất bản game ra thị trường quốc tế — nơi mỗi dòng code là một viên gạch xây nên thế giới.
+          </p>
+          <p>
+            Mục tiêu dài hạn: Trở thành <strong>Game Developer quốc tế</strong>,
+            mở rộng sang lĩnh vực quản lý phát triển và kinh doanh game toàn cầu.
+          </p>
+        </div>
+        <div class="about-cards">
+          <div class="info-card"><i class="fas fa-map-marker-alt"></i><span>Việt Nam</span></div>
+          <div class="info-card"><i class="fas fa-birthday-cake"></i><span>19/05/2001</span></div>
+          <div class="info-card"><i class="fas fa-code"></i><span>Unity Developer</span></div>
+          <div class="info-card"><i class="fas fa-building"></i><span>Quivering Studio</span></div>
+          <div class="info-card"><i class="fas fa-gamepad"></i><span>10+ Projects</span></div>
+          <div class="info-card"><i class="fas fa-globe"></i><span>Global Market</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATUS FEED ===== -->
+    <section class="section reveal" id="status-section" style="display:none">
+      <div class="section-header">
+        <span class="section-tag">// Live</span>
+        <h2>Cập nhật <span class="dot-live" style="display:inline-block;vertical-align:middle;margin-left:8px"></span></h2>
+      </div>
+      <div id="status-feed" class="status-feed"></div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="section reveal" id="skills">
+      <div class="section-header">
+        <span class="section-tag">02 // Skills</span>
+        <h2>Kỹ năng</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> Core Development</h3>
+          <div class="skill-items">
+            <div class="skill-item"><i class="fas fa-check-circle"></i><span>C# (OOP, Design Pattern)</span></div>
+            <div class="skill-item"><i class="fas fa-check-circle"></i><span>Unity 2D / 3D</span></div>
+            <div class="skill-item"><i class="fas fa-check-circle"></i><span>DOTween Animation</span></div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-tachometer-alt"></i> Performance</h3>
+          <div class="skill-items">
+            <div class="skill-item"><i class="fas fa-check-circle"></i><span>Game Optimization</span></div>
+            <div class="skill-item"><i class="fas fa-check-circle"></i><span>FPS Optimization</span></div>
+            <div class="skill-item"><i class="fas fa-check-circle"></i><span>Build Size Optimization</span></div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-robot"></i> Advanced Systems</h3>
+          <div class="skill-items">
+            <div class="skill-item"><i class="fas fa-check-circle"></i><span>AI Bot (State Machine)</span></div>
+            <div class="skill-item"><i class="fas fa-check-circle"></i><span>Editor Tools</span></div>
+            <div class="skill-item"><i class="fas fa-check-circle"></i><span>Ads Integration</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tech-tags">
+        <span class="tag"><i class="fas fa-check"></i> Unity</span>
+        <span class="tag"><i class="fas fa-check"></i> C#</span>
+        <span class="tag"><i class="fas fa-check"></i> DOTween</span>
+        <span class="tag"><i class="fas fa-check"></i> Pathfinding</span>
+        <span class="tag"><i class="fas fa-check"></i> Tracking Analytics</span>
+        <span class="tag"><i class="fas fa-check"></i> Firebase</span>
+        <span class="tag"><i class="fas fa-check"></i> Git / GitHub</span>
+        <span class="tag"><i class="fas fa-check"></i> AdMob</span>
+        <span class="tag"><i class="fas fa-check"></i> Design Patterns</span>
+        <span class="tag"><i class="fas fa-check"></i> Load Time Optimization</span>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section reveal" id="projects">
+      <div class="section-header">
+        <span class="section-tag">03 // Projects</span>
+        <h2>Dự án</h2>
+      </div>
+
+      <!-- ACTIVE / IN DEVELOPMENT -->
+      <div class="project-category">
+        <div class="category-label">
+          <span class="dot-live"></span>
+          <span>Đang Phát Triển</span>
+          <span class="year-pill">2025</span>
+        </div>
+        <div class="featured-grid">
+          <div class="featured-card reveal">
+            <div class="featured-img-wrap">
+              <img src="images/tower-defense/avatar.jpg" alt="Tower Defense Central Zone" loading="lazy" />
+              <div class="featured-badge in-progress">
+                <i class="fas fa-hammer"></i> In Progress
+              </div>
+            </div>
+            <div class="featured-info">
+              <span class="genre-tag"><i class="fas fa-chess-rook"></i> Strategy / Tower Defense</span>
+              <h3>Tower Defense: Central Zone</h3>
+              <p>Game chiến thuật thủ thành quy mô lớn. Hệ thống tháp đa dạng, kẻ địch với AI thông minh, chiến trường phức tạp nhiều tầng. Đang trong giai đoạn phát triển tích cực.</p>
+              <div class="tech-used">
+                <span>Unity 2D</span><span>C#</span><span>AI Pathfinding</span><span>State Machine</span><span>DOTween</span>
+              </div>
+              <a href="Project/TowerDefend/tower-defense.html" class="btn-card active-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-eye"></i> Xem chi tiết
+              </a>
+            </div>
+          </div>
+          <div class="featured-card reveal">
+            <div class="featured-img-wrap">
+              <img src="images/tower-defense/avatar.jpg" alt="Tower Defense World Ending" loading="lazy" />
+              <div class="featured-badge in-progress">
+                <i class="fas fa-hammer"></i> In Progress
+              </div>
+            </div>
+            <div class="featured-info">
+              <span class="genre-tag"><i class="fas fa-chess-rook"></i> Strategy / Tower Defense</span>
+              <h3>Tower Defense: World Ending</h3>
+              <p>Phần kế tiếp của loạt Tower Defense — quy mô thế giới rộng lớn hơn, hệ thống boss hoành tráng và campaign dài hơi đầy thử thách.</p>
+              <div class="tech-used">
+                <span>Unity 2D</span><span>C#</span><span>DOTween</span><span>Editor Tools</span>
+              </div>
+              <span class="btn-card disabled-btn"><i class="fas fa-clock"></i> Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECENT 2024 -->
+      <div class="project-category">
+        <div class="category-label">
+          <i class="fas fa-layer-group"></i>
+          <span>Recent Projects</span>
+          <span class="year-pill">2024</span>
+        </div>
+        <div class="projects-masonry">
+          <div class="project-card reveal">
+            <div class="card-img-wrap">
+              <img src="images/puzzle/arrow-direction-puzzle/icon.webp" alt="Arrow Direction Puzzle" loading="lazy" />
+              <div class="card-status released">Released</div>
+            </div>
+            <div class="card-body">
+              <span class="card-genre"><i class="fas fa-puzzle-piece"></i> Puzzle</span>
+              <h4>Arrow Direction Puzzle</h4>
+              <p>Game giải đố tối giản: Click mũi tên, giải mã mê cung trước khi hết giờ.</p>
+              <a href="Project/Puzzle/arrow-direction-puzzle.html" class="btn-card" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-right"></i> View Details
+              </a>
+            </div>
+          </div>
+          <div class="project-card reveal">
+            <div class="card-img-wrap">
+              <img src="images/chip-sort/ChipSort.png" alt="Chip Sort" loading="lazy" />
+              <div class="card-status released">Released</div>
+            </div>
+            <div class="card-body">
+              <span class="card-genre"><i class="fas fa-circle"></i> Casual</span>
+              <h4>Chip Sort</h4>
+              <p>Gameplay chính: chọn các màu chip giống nhau di chuyển cùng 1 ô.</p>
+              <a href="Project/Casual/chip-sort.html" class="btn-card" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-right"></i> View Details
+              </a>
+            </div>
+          </div>
+          <div class="project-card reveal">
+            <div class="card-img-wrap">
+              <img src="images/MergeBrainrot/MergeBrainrot (1).png" alt="Merge Brainrot" loading="lazy" />
+              <div class="card-status released">Released</div>
+            </div>
+            <div class="card-body">
+              <span class="card-genre"><i class="fas fa-star"></i> Casual / Merge</span>
+              <h4>Merge Brainrot: Monster War</h4>
+              <p>Sân đấu 5x3 — kéo vào merge để nâng cấp quái vật và thống trị chiến trường.</p>
+              <a href="Project/Casual/merge-brainrot-monster-war.html" class="btn-card" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-right"></i> View Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REAL-TIME DYNAMIC (Firebase) -->
+      <div id="dynamic-projects-section" style="display:none">
+        <div class="category-label">
+          <span class="dot-live"></span>
+          <span>Live Updates</span>
+          <span class="year-pill live-pill">LIVE</span>
+        </div>
+        <div id="dynamic-grid" class="projects-masonry"></div>
+      </div>
+    </section>
+
+    <!-- ===== ARCHIVE ===== -->
+    <section class="section reveal" id="archive">
+      <div class="section-header">
+        <span class="section-tag">04 // Archive</span>
+        <h2>Kho Dự Án Cũ</h2>
+        <p class="section-desc">Những dự án đã hoàn thành — mỗi cái là một bài học, một bước tiến.</p>
+      </div>
+      <div class="archive-timeline">
+
+        <!-- 2023 -->
+        <div class="year-group reveal">
+          <div class="year-marker">
+            <div class="year-badge">2023</div>
+            <div class="year-line"></div>
+          </div>
+          <div class="archive-grid">
+            <div class="archive-card">
+              <div class="archive-img-wrap">
+                <img src="images/Astronaut/Astronaut (1).png" alt="Astronaut" loading="lazy" />
+              </div>
+              <div class="archive-info">
+                <span class="a-genre">Puzzle</span>
+                <h4>Astronaut</h4>
+                <p>Click bắn đạn mở cổng dịch chuyển, đưa phi hành gia vượt 100+ màn.</p>
+                <a href="Project/Puzzle/astronaut.html" class="archive-link" target="_blank" rel="noopener noreferrer">View <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="archive-card">
+              <div class="archive-img-wrap">
+                <img src="images/car-jam-oil-transport/Car Jam Oil Transport.png" alt="Car Jam Oil Transport" loading="lazy" />
+              </div>
+              <div class="archive-info">
+                <span class="a-genre">Puzzle</span>
+                <h4>Car Jam Oil Transport</h4>
+                <p>Click chọn loại xe đúng với nhiên liệu đang xếp trong hàng chờ.</p>
+                <a href="Project/Puzzle/car-jam-oil-transport.html" class="archive-link" target="_blank" rel="noopener noreferrer">View <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="archive-card">
+              <div class="archive-img-wrap">
+                <img src="images/hexagon/Hexagon (1).png" alt="Hexagon" loading="lazy" />
+              </div>
+              <div class="archive-info">
+                <span class="a-genre">Puzzle</span>
+                <h4>Hexagon</h4>
+                <p>Di chuyển elements cùng màu để merge và hoàn thành target level.</p>
+                <a href="Project/Puzzle/hexagon.html" class="archive-link" target="_blank" rel="noopener noreferrer">View <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="archive-card">
+              <div class="archive-img-wrap">
+                <img src="images/boo-drop/Boo_Drop (3).png" alt="Boo Drop" loading="lazy" />
+              </div>
+              <div class="archive-info">
+                <span class="a-genre">Puzzle</span>
+                <h4>Boo Drop</h4>
+                <p>Di chuyển các hố để cho rơi các nhân vật cùng màu xuống hố.</p>
+                <a href="Project/Puzzle/boo-drop.html" class="archive-link" target="_blank" rel="noopener noreferrer">View <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2022 -->
+        <div class="year-group reveal">
+          <div class="year-marker">
+            <div class="year-badge">2022</div>
+            <div class="year-line"></div>
+          </div>
+          <div class="archive-grid">
+            <div class="archive-card">
+              <div class="archive-img-wrap">
+                <img src="images/match-frenzy/Match Frenzy  (1).png" alt="Match Frenzy" loading="lazy" />
+              </div>
+              <div class="archive-info">
+                <span class="a-genre">Casual / Match-3</span>
+                <h4>Match Frenzy</h4>
+                <p>Ghép các viên kẹo cùng màu để tạo combo và đạt điểm cao.</p>
+                <a href="Project/Puzzle/match-frenzy.html" class="archive-link" target="_blank" rel="noopener noreferrer">View <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="archive-card">
+              <div class="archive-img-wrap">
+                <img src="images/StickManTeleport/StickmanTeleport (1).png" alt="Stickman Teleport" loading="lazy" />
+              </div>
+              <div class="archive-info">
+                <span class="a-genre">Hyper-Casual</span>
+                <h4>Stickman Teleport</h4>
+                <p>Nhấn giữ làm chậm thời gian, buông tay bắn vũ khí kết liễu mục tiêu.</p>
+                <a href="Project/Hyper/stickman-teleport.html" class="archive-link" target="_blank" rel="noopener noreferrer">View <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="archive-card">
+              <div class="archive-img-wrap">
+                <img src="images/sanctum-summoners/SanctumSummoners (1).png" alt="Sanctum Summoners" loading="lazy" />
+              </div>
+              <div class="archive-info">
+                <span class="a-genre">Turn-Based Strategy</span>
+                <h4>Sanctum Summoners</h4>
+                <p>Triệu hồi và chỉ huy các đơn vị trong các trận chiến chiến lược turn-based.</p>
+                <a href="Project/TurnBase/sanctum-summoners.html" class="archive-link" target="_blank" rel="noopener noreferrer">View <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="archive-card">
+              <div class="archive-img-wrap">
+                <img src="images/glass-bottle-pack/Glass Bottle Pack  (1).png" alt="Glass Bottle Pack" loading="lazy" />
+              </div>
+              <div class="archive-info">
+                <span class="a-genre">Casual</span>
+                <h4>Glass Bottle Pack</h4>
+                <p>Xếp các chai thủy tinh vào đúng vị trí — kiểm soát tối giản, thư giãn tối đa.</p>
+                <a href="Project/Casual/glass-bottle-pack.html" class="archive-link" target="_blank" rel="noopener noreferrer">View <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section reveal" id="contact">
+      <div class="section-header">
+        <span class="section-tag">05 // Contact</span>
+        <h2>Liên hệ</h2>
+      </div>
+      <div class="contact-grid">
+        <a href="mailto:ngocson11a@gmail.com" class="contact-card">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-info">
+            <span class="contact-label">Email</span>
+            <span class="contact-val">ngocson11a@gmail.com</span>
+          </div>
+          <i class="fas fa-external-link-alt contact-arrow"></i>
+        </a>
+        <a href="https://github.com/sontran-2k1" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-icon github"><i class="fab fa-github"></i></div>
+          <div class="contact-info">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-val">sontran-2k1</span>
+          </div>
+          <i class="fas fa-external-link-alt contact-arrow"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">TNS<span class="accent">.</span>DEV</span>
+      <p>© <span id="year"></span> Trần Ngọc Sơn • Quivering Studio</p>
+      <p class="footer-sub">Crafted with 💜 Unity &amp; lots of caffeine</p>
+      <span class="version-badge">v2.1.0</span>
+    </div>
+  </footer>
+
+  <!-- ===== ADMIN LOGIN MODAL ===== -->
+  <div class="modal-overlay" id="loginModal" onclick="handleOverlayClick(event)">
+    <div class="modal-box" id="modalBox">
+      <button class="modal-close" onclick="closeLoginModal()" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-header">
+        <div class="modal-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+        <h3>Admin Access</h3>
+        <p>Đăng nhập để quản lý nội dung portfolio real-time</p>
+      </div>
+      <div id="loginSection">
+        <button class="btn-google" id="googleLoginBtn" onclick="loginWithGoogle()">
+          <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 2.9l5.7-5.7C34.2 6.6 29.4 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/>
+            <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 19 13 24 13c3.1 0 5.8 1.1 7.9 2.9l5.7-5.7C34.2 6.6 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
+            <path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.3 35.3 26.8 36 24 36c-5.3 0-9.7-3.3-11.3-8H5.9C9.2 39.8 16.1 44 24 44z"/>
+            <path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.7l6.2 5.2C40.9 35.9 44 30.4 44 24c0-1.3-.1-2.6-.4-3.9z"/>
+          </svg>
+          Đăng nhập với Google
+        </button>
+        <p class="login-note"><i class="fas fa-lock"></i> Chỉ tài khoản admin được cấp quyền mới có thể truy cập.</p>
+      </div>
+      <div id="loggedInSection" style="display:none">
+        <div class="admin-user-info">
+          <img id="adminAvatar" src="" alt="Admin" />
+          <div><strong id="adminName">Admin</strong><small id="adminEmail"></small></div>
+        </div>
+        <div class="admin-actions">
+          <button class="btn-admin-open" onclick="closeLoginModal(); openAdminPanel();">
+            <i class="fas fa-tools"></i> Mở Admin Panel
+          </button>
+          <button class="btn-export-cv" onclick="alert('Tính năng xuất CV sẽ sớm ra mắt!')" title="Xuất CV thành file">
+            <i class="fas fa-file-download"></i> Xuất CV
+          </button>
+          <button class="btn-logout" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i> Đăng xuất
+          </button>
+        </div>
+      </div>
+      <div class="firebase-note" id="firebaseNote">
+        <i class="fas fa-info-circle"></i>
+        <span>Cần cấu hình Firebase. Xem hướng dẫn trong <code>js/admin.js</code></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ADMIN PANEL (Facebook-style centered modal) ===== -->
+  <div class="admin-overlay" id="adminPanel" onclick="if(event.target===this)closeAdminPanel()">
+    <div class="admin-modal">
+
+      <!-- Header -->
+      <div class="admin-modal-header">
+        <span></span>
+        <h3><i class="fas fa-tools"></i> Admin Panel</h3>
+        <button class="panel-close" onclick="closeAdminPanel()" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- User strip -->
+      <div class="admin-modal-user">
+        <img id="adminPanelAvatar" src="images/avatar.png" alt="Admin" class="admin-panel-avatar" />
+        <div>
+          <strong id="adminPanelName">Admin</strong>
+          <span class="online-badge"><span class="dot-live small"></span> Online</span>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="status">
+          <i class="fas fa-comment-alt"></i> Status
+        </button>
+        <button class="admin-tab" data-tab="project">
+          <i class="fas fa-gamepad"></i> Dự Án
+        </button>
+        <button class="admin-tab" data-tab="manage">
+          <i class="fas fa-list"></i> Quản Lý
+        </button>
+      </div>
+
+      <!-- === TAB: STATUS === -->
+      <div class="admin-tab-content active" id="tab-status">
+        <div class="mood-picker" id="moodPicker">
+          <button class="mood-btn active" data-mood="💻" title="Coding">💻</button>
+          <button class="mood-btn" data-mood="🎮" title="Gaming">🎮</button>
+          <button class="mood-btn" data-mood="☕" title="Coffee break">☕</button>
+          <button class="mood-btn" data-mood="🔥" title="On fire">🔥</button>
+          <button class="mood-btn" data-mood="😴" title="Resting">😴</button>
+          <button class="mood-btn" data-mood="🚀" title="Launching">🚀</button>
+          <button class="mood-btn" data-mood="🎵" title="Music">🎵</button>
+          <button class="mood-btn" data-mood="💡" title="Idea">💡</button>
+        </div>
+        <form id="statusForm">
+          <input type="hidden" id="editingStatusId" value="" />
+          <textarea id="status-text" placeholder="Bạn đang làm gì thế? 👀" class="panel-input fb-textarea" maxlength="280" rows="3" required></textarea>
+          <div class="status-char-count"><span id="statusCharCount">0</span>/280</div>
+          <div class="post-upload-zone" id="statusUploadZone">
+            <input type="file" id="statusFileInput" accept="image/*" style="display:none" />
+            <div class="post-upload-placeholder" id="statusUploadPlaceholder">
+              <i class="fas fa-image"></i>
+              <span>Thêm ảnh vào bài đăng</span>
+            </div>
+            <div class="post-img-preview" id="statusImgPreview" style="display:none">
+              <img id="statusPreviewImg" src="" alt="preview" />
+              <button type="button" class="remove-img-btn" id="removeStatusImg">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="status-form-actions">
+            <button type="submit" class="btn-post" id="statusSubmitBtn">
+              <i class="fas fa-paper-plane"></i> Đăng Status
+            </button>
+            <button type="button" class="btn-cancel-edit" id="cancelEditBtn" style="display:none" onclick="cancelStatusEdit()">
+              <i class="fas fa-times"></i> Hủy
+            </button>
+          </div>
+        </form>
+        <div id="adminStatusList" class="admin-status-list">
+          <p class="empty-hint">Chưa có status nào...</p>
+        </div>
+      </div>
+
+      <!-- === TAB: PROJECT === -->
+      <div class="admin-tab-content" id="tab-project">
+        <form id="addProjectForm">
+          <div class="post-upload-zone proj-upload-zone" id="projUploadZone">
+            <input type="file" id="projFileInput" accept="image/*" style="display:none" />
+            <div class="post-upload-placeholder" id="projUploadPlaceholder">
+              <i class="fas fa-image"></i>
+              <span>Ảnh dự án (click hoặc kéo thả)</span>
+            </div>
+            <div class="post-img-preview" id="projImgPreview" style="display:none">
+              <img id="projPreviewImg" src="" alt="preview" />
+              <button type="button" class="remove-img-btn" id="removeProjImg">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <span class="upload-status" id="uploadStatus"></span>
+          <input type="text" id="proj-title" placeholder="Tên dự án *" class="panel-input" required />
+          <input type="text" id="proj-genre" placeholder="Thể loại (Puzzle, Casual...)" class="panel-input" required />
+          <textarea id="proj-desc" placeholder="Mô tả dự án *" class="panel-input panel-textarea" rows="3" required></textarea>
+          <input type="url" id="proj-link" placeholder="Link dự án (optional)" class="panel-input" />
+          <button type="submit" class="btn-post">
+            <i class="fas fa-plus"></i> Thêm vào Portfolio
+          </button>
+        </form>
+      </div>
+
+      <!-- === TAB: MANAGE === -->
+      <div class="admin-tab-content" id="tab-manage">
+        <h4 class="manage-title">
+          <i class="fas fa-broadcast-tower"></i> Live Projects
+          <span class="dot-live small" style="margin-left:6px"></span>
+        </h4>
+        <div id="dynamicProjectsList" class="dynamic-list">
+          <p class="empty-hint">Chưa có dự án nào được thêm...</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/reveal.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/admin.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Typed text effect
+    const phrases = ["Unity Developer 🎮", "Game Designer ✦", "Founder @ Quivering Studio", "Builder of Digital Worlds"];
+    let phraseIdx = 0, charIdx = 0, isDeleting = false;
+    function typeEffect() {
+      const el = document.getElementById("typedText");
+      const phrase = phrases[phraseIdx];
+      if (!isDeleting) {
+        el.textContent = phrase.slice(0, ++charIdx);
+        if (charIdx === phrase.length) { isDeleting = true; setTimeout(typeEffect, 2000); return; }
+      } else {
+        el.textContent = phrase.slice(0, --charIdx);
+        if (charIdx === 0) { isDeleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; }
+      }
+      setTimeout(typeEffect, isDeleting ? 55 : 105);
+    }
+    typeEffect();
+
+    // Navbar scroll
+    window.addEventListener("scroll", () => {
+      document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 60);
+    });
+
+    // Stats counter
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll(".stat-num[data-target]").forEach(el => {
+            const target = parseInt(el.getAttribute("data-target"));
+            let count = 0;
+            const timer = setInterval(() => {
+              count = Math.min(count + 1, target);
+              el.textContent = count;
+              if (count >= target) clearInterval(timer);
+            }, 80);
+          });
+          statsObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll(".hero-stats").forEach(el => statsObserver.observe(el));
+
+    // Mobile nav
+    function toggleNav() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => document.getElementById("navLinks").classList.remove("open"));
+    });
+  </script>
+</body>
+
+</html>
